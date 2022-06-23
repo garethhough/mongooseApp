@@ -9,7 +9,7 @@ const app = async (yargsObj) => {
     try {
         // if add is typed into terminal, addMovie function is called
         if (yargsObj.add) {
-            await addMovie({title: yargsObj.title, actor: yargsObj.actor})
+            await addMovie({title: yargsObj.title, actor: yargsObj.actor, releaseDate: yargsObj.releaseDate,})
         // after add function is called, listMovies function is called to show you the contents   
             console.log(await listMovies());
         // if list is typed into terminal, listMovies function is called    

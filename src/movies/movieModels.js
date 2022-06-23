@@ -9,6 +9,9 @@ const movieSchema = new mongoose.Schema({
     actor: {
         type: String,
     },
+    releaseDate: {
+        type: Number,
+    },
 });
 
 const Movie = mongoose.model("Movie", movieSchema);
