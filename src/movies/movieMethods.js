@@ -28,6 +28,13 @@ exports.listMovies = async () => {
       }
     };
 
-    //to do list
-//CREATE DELETE ONE OF DELETE MANY FUNCTION
+// Find and delete movie by title
+exports.removeMovie = async (movieObj) => {
+  try {
+    await Movie.deleteOne({title: movieObj.title});
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 

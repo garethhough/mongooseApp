@@ -27,8 +27,6 @@ const app = async (yargsObj) => {
     } else if (yargsObj.remove) {
       await removeMovie({
         title: yargsObj.title,
-        actor: yargsObj.actor,
-        releaseDate: yargsObj.releaseDate,
       });
       console.log(await listMovies());
       // if update is typed into terminal, updateMovie function is called
