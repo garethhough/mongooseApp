@@ -36,6 +36,6 @@ exports.removeMovie = async (movieObj) => {
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 
