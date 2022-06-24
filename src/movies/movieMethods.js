@@ -20,13 +20,14 @@ exports.listMovies = async () => {
 };
 
 //find movie by title name and update title, actor, and release date
-    exports.updateMovie = async (movieObj) => {
-      try {
-        await Movie.updateOne({title: movieObj.title, actor: movieObj.actor, releaseDate: movieObj.releaseDate});
-      } catch (error) {
-        console.log(error);
-      }
-    };
+exports.updateMovie = async (filterObj,newDetails) => {
+  try{
+      return Movie.findOneAndUpdate(filterObj, newDetails);
+  }
+  catch(error){
+      console.log(error);
+  }
+};
 
 // Find and delete movie by title
 exports.removeMovie = async (movieObj) => {

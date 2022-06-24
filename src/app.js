@@ -26,20 +26,19 @@ const app = async (yargsObj) => {
     } else if (yargsObj.list) {
       console.log(await listMovies());
       // if remove is typed into terminal, removeMovie function is called
-     // node src/app.js --remove --title="spiderman"  
+      // node src/app.js --remove --title="spiderman"
     } else if (yargsObj.remove) {
       await removeMovie({
         title: yargsObj.title,
       });
       console.log(await listMovies());
       // if update is typed into terminal, updateMovie function is called
-      // node src/app.js --update="filmToUpdate" --title="newFilmTitle" --actor="newActorName" --releaseDate="newDate" 
+      // node src/app.js --update="filmToUpdate" --title="newFilmTitle" --actor="newActorName" --releaseDate="newDate"
     } else if (yargsObj.update) {
-      await updateMovie({
-        title: yargsObj.title,
-        actor: yargsObj.actor,
-        releaseDate: yargsObj.releaseDate,
-      });
+      await updateMovie(
+        {title: yargsObj.update}, 
+        {actor: yargsObj.actor,
+        releaseDate: yargsObj.releaseDate,});
       console.log(updateMovie);
     } else {
       console.log("Incorrect command");
